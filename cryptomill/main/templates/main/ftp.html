@@ -13,66 +13,99 @@
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         <a class="me-3 py-2 text-white text-decoration-none" href="{% url 'home' %}">Home</a>
         <a class="me-3 py-2 text-white text-decoration-none" href="{% url 'crypto' %}">Cryptoprojects</a>
-        <a class="me-3 py-2 text-white text-decoration-none" href="#">NFT's</a>
-        <a class="me-3 py-2 text-white text-decoration-none" href="#">Contacts</a>
+        <a class="me-3 py-2 text-white text-decoration-none" href="#">Creator</a>
+        <a class="me-3 py-2 text-white text-decoration-none" href="#">FAQ</a>
       </nav>
     </div>
+
+<div class="nav-scroller bg-body shadow-sm">
+  <nav class="nav nav-underline" aria-label="Secondary navigation">
+    <a class="nav-link active" aria-current="page" href="{% url 'crypto' %}">Cryptocurrencies
+      <span class="badge bg-light text-dark rounded-pill align-text-bottom">Ranking</span>
+    </a>
+    <a class="nav-link" href="#">
+      DeFi
+      <span class="badge bg-light text-dark rounded-pill align-text-bottom">♻️</span>
+    </a>
+    <a class="nav-link" href="#">NFT
+      <span class="badge bg-light text-dark rounded-pill align-text-bottom">News 🔔</span>
+    </a>
+    <a class="nav-link" href="#">Metaverse
+      <span class="badge bg-light text-dark rounded-pill align-text-bottom">🌐</span>
+    </a>
+    <a class="nav-link" href="#">Trending coins
+       <span class="badge bg-light text-dark rounded-pill align-text-bottom"> 📈</span>
+    </a>
+  </nav>
+</div>
+
 <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">Coins ranking</th>
+              <th scope="col">Coins ranking 📊</th>
               <th scope="col">Price 💵</th>
               <th scope="col">24h %</th>
-              <th scope="col">7d %</th>
+              <th scope="col">high 24h</th>
+              <th scope="col">low 24h</th>
               <th scope="col">Market Cap</th>
-              <th scope="col">Volume(24h)</th>
-              <th scope="col">Web site</th>
-
+              <th scope="col">Web Site</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="display-5 fw-bold">  1  <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" loading="lazy" alt="BTC logo"> Bitcoin-BTC</td>
+              <td>  ⭐️1  <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" loading="lazy" alt="BTC logo"> Bitcoin-BTC</td>
               <td>{{ BTC_current_price }}</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
+              <td>{{ BTC_price_change_percentage_24h }}</td>
+              <td>{{ BTC_high_24h }}</td>
+              <td>{{ BTC_low_24h }}</td>
+              <td>{{ BTC_market_cap }}</td>
+              <td> <a target="_blank" rel="nofollow noopener" class="tw-px-2.5 tw-py-1 tw-my-0.5 tw-mr-1 tw-rounded-md tw-text-sm tw-font-medium tw-bg-gray-100 tw-text-gray-800 hover:tw-bg-gray-200 dark:tw-text-white dark:tw-bg-white dark:tw-bg-opacity-10 dark:hover:tw-bg-opacity-20 dark:focus:tw-bg-opacity-20 " href="https://www.bitcoin.org">bitcoin.org</a></td>
             </tr>
             <tr>
-              <td>1,002</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
+              <td>  ⭐️2 <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" loading="lazy" alt="ETH logo"> Ethereum-ETH</td>
+              <td>{{ ETH_current_price }}</td>
+              <td>{{ ETH_price_change_percentage_24h }}</td>
+              <td>{{ ETH_high_24h }}</td>
+              <td>{{ ETH_low_24h }}</td>
+              <td>{{ ETH_market_cap }}</td>
+              <td> <a target="_blank" rel="nofollow noopener" class="tw-px-2.5 tw-py-1 tw-my-0.5 tw-mr-1 tw-rounded-md tw-text-sm tw-font-medium tw-bg-gray-100 tw-text-gray-800 hover:tw-bg-gray-200 dark:tw-text-white dark:tw-bg-white dark:tw-bg-opacity-10 dark:hover:tw-bg-opacity-20 dark:focus:tw-bg-opacity-20 " href="https://www.ethereum.org/">ethereum.org</a></td>
             </tr>
             <tr>
-              <td>1,003</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
+              <td>  ⭐️3 <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/825.png" loading="lazy" alt="USDT logo"> Tether-USDT</td>
+              <td>{{ USDT_current_price }}</td>
+              <td>{{ USDT_price_change_percentage_24h }}</td>
+              <td>{{ USDT_high_24h }}</td>
+              <td>{{ USDT_low_24h }}</td>
+              <td>{{ USDT_market_cap }}</td>
+              <td> <a target="_blank" rel="nofollow noopener" class="tw-px-2.5 tw-py-1 tw-my-0.5 tw-mr-1 tw-rounded-md tw-text-sm tw-font-medium tw-bg-gray-100 tw-text-gray-800 hover:tw-bg-gray-200 dark:tw-text-white dark:tw-bg-white dark:tw-bg-opacity-10 dark:hover:tw-bg-opacity-20 dark:focus:tw-bg-opacity-20 " href="https://tether.to/">tether.to</a></td>
             </tr>
             <tr>
-              <td>1,003</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
+              <td>  ⭐️4 <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png" loading="lazy" alt="BNB logo"> Binance Coin-BNB</td>
+              <td>{{ BNB_current_price }}</td>
+              <td>{{ BNB_price_change_percentage_24h }}</td>
+              <td>{{ BNB_high_24h }}</td>
+              <td>{{ BNB_low_24h }}</td>
+              <td>{{ BNB_market_cap }}</td>
+              <td> <a target="_blank" rel="nofollow noopener" class="tw-px-2.5 tw-py-1 tw-my-0.5 tw-mr-1 tw-rounded-md tw-text-sm tw-font-medium tw-bg-gray-100 tw-text-gray-800 hover:tw-bg-gray-200 dark:tw-text-white dark:tw-bg-white dark:tw-bg-opacity-10 dark:hover:tw-bg-opacity-20 dark:focus:tw-bg-opacity-20 " href="https://www.binance.com/">binance.com</a></td>
             </tr>
             <tr>
-              <td>1,004</td>
-              <td>text</td>
-              <td>random</td>
-              <td>layout</td>
-              <td>dashboard</td>
+              <td>  ⭐️5 <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png" loading="lazy" alt="USDC logo"> USD Coin-USDC</td>
+              <td>{{ USDC_current_price }}</td>
+              <td>{{ USDC_price_change_percentage_24h }}</td>
+              <td>{{ USDC_high_24h }}</td>
+              <td>{{ USDC_low_24h }}</td>
+              <td>{{ USDC_market_cap }}</td>
+              <td> <a target="_blank" rel="nofollow noopener" class="tw-px-2.5 tw-py-1 tw-my-0.5 tw-mr-1 tw-rounded-md tw-text-sm tw-font-medium tw-bg-gray-100 tw-text-gray-800 hover:tw-bg-gray-200 dark:tw-text-white dark:tw-bg-white dark:tw-bg-opacity-10 dark:hover:tw-bg-opacity-20 dark:focus:tw-bg-opacity-20 " href="https://www.circle.com/en/usdc">circle.com</a></td>>
             </tr>
             <tr>
-              <td>1,005</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>placeholder</td>
+              <td>  ⭐️6 <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png" loading="lazy" alt="ADA logo"> Cardano-ADA</td>
+              <td>{{ ADA_current_price }}</td>
+              <td>{{ ADA_price_change_percentage_24h }}</td>
+              <td>{{ ADA_high_24h }}</td>
+              <td>{{ ADA_low_24h }}</td>
+              <td>{{ ADA_market_cap }}</td>
+              <td> <a target="_blank" rel="nofollow noopener" class="tw-px-2.5 tw-py-1 tw-my-0.5 tw-mr-1 tw-rounded-md tw-text-sm tw-font-medium tw-bg-gray-100 tw-text-gray-800 hover:tw-bg-gray-200 dark:tw-text-white dark:tw-bg-white dark:tw-bg-opacity-10 dark:hover:tw-bg-opacity-20 dark:focus:tw-bg-opacity-20 " href="https://www.cardano.org/en/home/">cardano.org</a></td>
             </tr>
             <tr>
               <td>1,006</td>
