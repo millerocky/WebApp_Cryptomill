@@ -38,7 +38,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'cryptomill.urls'
+ROOT_URLCONF = 'main.urls'
 
 TEMPLATES = [
     {
