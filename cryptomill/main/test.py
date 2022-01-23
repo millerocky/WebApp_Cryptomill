@@ -3,7 +3,7 @@ class CoinsCurrentPrice:
     cg = CoinGeckoAPI()
 
     test = cg.get_coins_markets(vs_currency='usd')
-
+    test = test[0]['name']
 
 
 

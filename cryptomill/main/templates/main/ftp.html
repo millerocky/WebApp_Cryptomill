@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="fontawesome-free/css/all.min.css">
 </head>
+
 <body>
 <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom" style="background: MediumTurquoise;">
   <span class="fs-4 text-white"><h1>Ⓜ️ Cryptomill</h1></span>
@@ -20,21 +21,11 @@
 
 <div class="nav-scroller bg-body shadow-sm">
   <nav class="nav nav-underline" aria-label="Secondary navigation">
-    <a class="nav-link active" aria-current="page" href="{% url 'crypto' %}">Cryptocurrencies
-      <span class="badge bg-light text-dark rounded-pill align-text-bottom">Ranking</span>
-    </a>
-    <a class="nav-link" href="#">DeFi
-      <span class="badge bg-light text-dark rounded-pill align-text-bottom">♻️</span>
-    </a>
-    <a class="nav-link" href="#">NFT
-      <span class="badge bg-light text-dark rounded-pill align-text-bottom">News 🔔</span>
-    </a>
-    <a class="nav-link" href="#">Metaverse
-      <span class="badge bg-light text-dark rounded-pill align-text-bottom">🌐</span>
-    </a>
-    <a class="nav-link" href="#">Trending coins
-       <span class="badge bg-light text-dark rounded-pill align-text-bottom">📈</span>
-    </a>
+    <a class="nav-link active" aria-current="page" href="{% url 'crypto' %}">Cryptocurrencies<span class="badge bg-light text-dark rounded-pill align-text-bottom">Ranking</span></a>
+    <a class="nav-link" href="#">DeFi<span class="badge bg-light text-dark rounded-pill align-text-bottom">♻️</span></a>
+    <a class="nav-link" href="#">NFT<span class="badge bg-light text-dark rounded-pill align-text-bottom">News 🔔</span></a>
+    <a class="nav-link" href="#">Metaverse<span class="badge bg-light text-dark rounded-pill align-text-bottom">🌐</span></a>
+    <a class="nav-link" href="#">Trending coins<span class="badge bg-light text-dark rounded-pill align-text-bottom">📈</span></a>
   </nav>
 </div>
 
@@ -43,6 +34,7 @@
           <thead>
             <tr>
               <th scope="col">Coins ranking 📊</th>
+              <th scope="col">Ticker</th>
               <th scope="col">Price 💵</th>
               <th scope="col">24h %</th>
               <th scope="col">high 24h</th>
@@ -53,7 +45,8 @@
           </thead>
           <tbody>
             <tr>
-              <td>  ⭐️1  <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" loading="lazy" alt="BTC logo"> Bitcoin-BTC</td>
+              <td>  ⭐️1 <img class="mr-0 tw-max-h-5 tw-w-5 tw-overflow-hidden" style="width: 18px; height: 18px;" alt="биткоин (BTC)" data-src="https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png?1547033579" data-srcset="https://assets.coingecko.com/coins/images/1/thumb_2x/bitcoin.png?1547033579 2x" src="https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png?1547033579" srcset="https://assets.coingecko.com/coins/images/1/thumb_2x/bitcoin.png?1547033579 2x"> <b>{{ BTC_name }}</b></td>
+              <td>{{ BTC_symbol }}</td>
               <td>{{ BTC_current_price }}</td>
               <td>{{ BTC_price_change_percentage_24h }}</td>
               <td>{{ BTC_high_24h }}</td>
@@ -62,7 +55,8 @@
               <td><img class="" width="135" height="50" alt="биткоин (BTC) 7d chart" data-src="https://www.coingecko.com/coins/1/sparkline" data-srcset="https://www.coingecko.com/coins/1/sparkline 1x" src="https://www.coingecko.com/coins/1/sparkline" srcset="https://www.coingecko.com/coins/1/sparkline 1x"></td>
             </tr>
             <tr>
-              <td>  ⭐️2 <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" loading="lazy" alt="ETH logo"> Ethereum-ETH</td>
+              <td>  ⭐️2 <img class="mr-0 tw-max-h-5 tw-w-5 tw-overflow-hidden" style="width: 18px; height: 18px;" alt="эфириум (ETH)" data-src="https://assets.coingecko.com/coins/images/279/thumb/ethereum.png?1595348880" data-srcset="https://assets.coingecko.com/coins/images/279/thumb_2x/ethereum.png?1595348880 2x" src="https://assets.coingecko.com/coins/images/279/thumb/ethereum.png?1595348880" srcset="https://assets.coingecko.com/coins/images/279/thumb_2x/ethereum.png?1595348880 2x"> <b>{{ ETH_name }}</b></td>
+               <td>{{ ETH_symbol }}</td>
               <td>{{ ETH_current_price }}</td>
               <td>{{ ETH_price_change_percentage_24h }}</td>
               <td>{{ ETH_high_24h }}</td>
@@ -71,7 +65,8 @@
               <td><img class="" width="135" height="50" alt="эфириум (ETH) 7d chart" data-src="https://www.coingecko.com/coins/279/sparkline" data-srcset="https://www.coingecko.com/coins/279/sparkline 1x" src="https://www.coingecko.com/coins/279/sparkline" srcset="https://www.coingecko.com/coins/279/sparkline 1x"></td>
             </tr>
             <tr>
-              <td>  ⭐️3 <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/825.png" loading="lazy" alt="USDT logo"> Tether-USDT</td>
+              <td>  ⭐️3 <img class="mr-0 tw-max-h-5 tw-w-5 tw-overflow-hidden" style="width: 18px; height: 18px;" alt="tether (USDT)" data-src="https://assets.coingecko.com/coins/images/325/thumb/Tether-logo.png?1598003707" data-srcset="https://assets.coingecko.com/coins/images/325/thumb_2x/Tether-logo.png?1598003707 2x" src="https://assets.coingecko.com/coins/images/325/thumb/Tether-logo.png?1598003707" srcset="https://assets.coingecko.com/coins/images/325/thumb_2x/Tether-logo.png?1598003707 2x"> <b>{{ USDT_name }}</b></td>
+              <td>{{ USDT_symbol }}</td>
               <td>{{ USDT_current_price }}</td>
               <td>{{ USDT_price_change_percentage_24h }}</td>
               <td>{{ USDT_high_24h }}</td>
@@ -80,7 +75,8 @@
               <td><img class="" width="135" height="50" alt="tether (USDT) 7d chart" data-src="https://www.coingecko.com/coins/325/sparkline" data-srcset="https://www.coingecko.com/coins/325/sparkline 1x" src="https://www.coingecko.com/coins/325/sparkline" srcset="https://www.coingecko.com/coins/325/sparkline 1x"></td>
             </tr>
             <tr>
-              <td>  ⭐️4 <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png" loading="lazy" alt="BNB logo"> Binance Coin-BNB</td>
+              <td>  ⭐️4 <img class="mr-0 tw-max-h-5 tw-w-5 tw-overflow-hidden" style="width: 18px; height: 18px;" alt="binance coin (BNB)" data-src="https://assets.coingecko.com/coins/images/825/thumb/binance-coin-logo.png?1547034615" data-srcset="https://assets.coingecko.com/coins/images/825/thumb_2x/binance-coin-logo.png?1547034615 2x" src="https://assets.coingecko.com/coins/images/825/thumb/binance-coin-logo.png?1547034615" srcset="https://assets.coingecko.com/coins/images/825/thumb_2x/binance-coin-logo.png?1547034615 2x"> <b>{{ BNB_name }}</b></td>
+              <td>{{ BNB_symbol }}</td>
               <td>{{ BNB_current_price }}</td>
               <td>{{ BNB_price_change_percentage_24h }}</td>
               <td>{{ BNB_high_24h }}</td>
@@ -89,16 +85,18 @@
               <td><img class="" width="135" height="50" alt="binance coin (BNB) 7d chart" data-src="https://www.coingecko.com/coins/825/sparkline" data-srcset="https://www.coingecko.com/coins/825/sparkline 1x" src="https://www.coingecko.com/coins/825/sparkline" srcset="https://www.coingecko.com/coins/825/sparkline 1x"></td>
             </tr>
             <tr>
-              <td>  ⭐️5 <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png" loading="lazy" alt="USDC logo"> USD Coin-USDC</td>
+              <td>  ⭐️5 <img class="mr-0 tw-max-h-5 tw-w-5 tw-overflow-hidden" style="width: 18px; height: 18px;" alt="usd coin (USDC)" data-src="https://assets.coingecko.com/coins/images/6319/thumb/USD_Coin_icon.png?1547042389" data-srcset="https://assets.coingecko.com/coins/images/6319/thumb_2x/USD_Coin_icon.png?1547042389 2x" src="https://assets.coingecko.com/coins/images/6319/thumb/USD_Coin_icon.png?1547042389" srcset="https://assets.coingecko.com/coins/images/6319/thumb_2x/USD_Coin_icon.png?1547042389 2x"> <b>{{ USDC_name }}</b></td>
+              <td>{{ USDC_symbol }}</td>
               <td>{{ USDC_current_price }}</td>
               <td>{{ USDC_price_change_percentage_24h }}</td>
               <td>{{ USDC_high_24h }}</td>
               <td>{{ USDC_low_24h }}</td>
               <td>{{ USDC_market_cap }}</td>
-              <td><img class="" width="135" height="50" alt="usd coin (USDC) 7d chart" data-src="https://www.coingecko.com/coins/6319/sparkline" data-srcset="https://www.coingecko.com/coins/6319/sparkline 1x" src="https://www.coingecko.com/coins/6319/sparkline" srcset="https://www.coingecko.com/coins/6319/sparkline 1x"></td>>
+              <td><img class="" width="135" height="50" alt="usd coin (USDC) 7d chart" data-src="https://www.coingecko.com/coins/6319/sparkline" data-srcset="https://www.coingecko.com/coins/6319/sparkline 1x" src="https://www.coingecko.com/coins/6319/sparkline" srcset="https://www.coingecko.com/coins/6319/sparkline 1x"></td>
             </tr>
             <tr>
-              <td>  ⭐️6 <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png" loading="lazy" alt="ADA logo"> Cardano-ADA</td>
+              <td>  ⭐️6 <img class="mr-0 tw-max-h-5 tw-w-5 tw-overflow-hidden" style="width: 18px; height: 18px;" alt="кардано (ADA)" data-src="https://assets.coingecko.com/coins/images/975/thumb/cardano.png?1547034860" data-srcset="https://assets.coingecko.com/coins/images/975/thumb_2x/cardano.png?1547034860 2x" src="https://assets.coingecko.com/coins/images/975/thumb/cardano.png?1547034860" srcset="https://assets.coingecko.com/coins/images/975/thumb_2x/cardano.png?1547034860 2x"> <b>{{ ADA_name }}</b></td>
+              <td>{{ ADA_symbol }}</td>
               <td>{{ ADA_current_price }}</td>
               <td>{{ ADA_price_change_percentage_24h }}</td>
               <td>{{ ADA_high_24h }}</td>
@@ -107,11 +105,14 @@
               <td><img class="" width="135" height="50" alt="кардано (ADA) 7d chart" data-src="https://www.coingecko.com/coins/975/sparkline" data-srcset="https://www.coingecko.com/coins/975/sparkline 1x" src="https://www.coingecko.com/coins/975/sparkline" srcset="https://www.coingecko.com/coins/975/sparkline 1x"></td>
             </tr>
             <tr>
-              <td>1,006</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
+              <td>  ⭐️7 <img class="mr-0 tw-max-h-5 tw-w-5 tw-overflow-hidden" style="width: 18px; height: 18px;" alt="solana (SOL)" data-src="https://assets.coingecko.com/coins/images/4128/thumb/solana.png?1640133422" data-srcset="https://assets.coingecko.com/coins/images/4128/thumb_2x/solana.png?1640133422 2x" src="https://assets.coingecko.com/coins/images/4128/thumb/solana.png?1640133422" srcset="https://assets.coingecko.com/coins/images/4128/thumb_2x/solana.png?1640133422 2x"> <b>{{ SOL_name }}</b></td>
+              <td>{{ SOL_symbol }}</td>
+              <td>{{ SOL_current_price }}</td>
+              <td>{{ SOL_price_change_percentage_24h }}</td>
+              <td>{{ SOL_high_24h }}</td>
+              <td>{{ SOL_low_24h }}</td>
+              <td>{{ SOL_market_cap }}</td>
+              <td><img class="" width="135" height="50" alt="solana (SOL) 7d chart" data-src="https://www.coingecko.com/coins/4128/sparkline" data-srcset="https://www.coingecko.com/coins/4128/sparkline 1x" src="https://www.coingecko.com/coins/4128/sparkline" srcset="https://www.coingecko.com/coins/4128/sparkline 1x"></td>
             </tr>
             <tr>
               <td>1,007</td>

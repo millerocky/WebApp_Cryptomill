@@ -10,7 +10,13 @@ def cryptoprojects_page(request):
     from pycoingecko import CoinGeckoAPI
     cg = CoinGeckoAPI()
 
-    '''Getting all the data about Bitcoin from API'''
+    '''Getting all the data about cryptocurrencies from CoinGecko API'''
+    BTC_name_API = cg.get_coins_markets(vs_currency='usd')
+    BTC_name = BTC_name_API[0]['name']
+
+    BTC_symbol_API = cg.get_coins_markets(vs_currency='usd')
+    BTC_symbol= str(BTC_name_API[0]['symbol']).upper()
+
     BTC_current_price_API = cg.get_coins_markets(vs_currency='usd')
     BTC_current_price = str(BTC_current_price_API[0]['current_price']) + ' $'
     # Final formatted BTC current price output
@@ -32,6 +38,12 @@ def cryptoprojects_page(request):
 
 
 
+    ETH_name_API = cg.get_coins_markets(vs_currency='usd')
+    ETH_name = ETH_name_API[1]['name']
+
+    ETH_symbol_API = cg.get_coins_markets(vs_currency='usd')
+    ETH_symbol = str(ETH_symbol_API[1]['symbol']).upper()
+
     ETH_current_price_API = cg.get_coins_markets(vs_currency='usd')
     ETH_current_price = str(ETH_current_price_API[1]['current_price']) + ' $'
 
@@ -47,6 +59,13 @@ def cryptoprojects_page(request):
     ETH_low_24h_API = cg.get_coins_markets(vs_currency='usd')
     ETH_low_24h = str(ETH_low_24h_API[1]['low_24h']) + ' $'
 
+
+
+    USDT_name_API = cg.get_coins_markets(vs_currency='usd')
+    USDT_name = USDT_name_API[2]['name']
+
+    USDT_symbol_API = cg.get_coins_markets(vs_currency='usd')
+    USDT_symbol = str(USDT_symbol_API[2]['symbol']).upper()
 
     USDT_current_price_API = cg.get_coins_markets(vs_currency='usd')
     USDT_current_price = str(USDT_current_price_API[2]['current_price']) + ' $'
@@ -64,6 +83,13 @@ def cryptoprojects_page(request):
     USDT_low_24h = str(USDT_low_24h_API[2]['low_24h']) + ' $'
 
 
+
+    BNB_name_API = cg.get_coins_markets(vs_currency='usd')
+    BNB_name = BNB_name_API[3]['name']
+
+    BNB_symbol_API = cg.get_coins_markets(vs_currency='usd')
+    BNB_symbol = str(BNB_symbol_API[3]['symbol']).upper()
+
     BNB_current_price_API = cg.get_coins_markets(vs_currency='usd')
     BNB_current_price = str(BNB_current_price_API[3]['current_price']) + ' $'
 
@@ -80,6 +106,13 @@ def cryptoprojects_page(request):
     BNB_low_24h = str(BNB_low_24h_API[3]['low_24h']) + ' $'
 
 
+
+    USDC_name_API = cg.get_coins_markets(vs_currency='usd')
+    USDC_name = USDC_name_API[4]['name']
+
+    USDC_symbol_API = cg.get_coins_markets(vs_currency='usd')
+    USDC_symbol = str(USDC_symbol_API[4]['symbol']).upper()
+
     USDC_current_price_API = cg.get_coins_markets(vs_currency='usd')
     USDC_current_price = str(USDC_current_price_API[4]['current_price']) + ' $'
 
@@ -94,6 +127,14 @@ def cryptoprojects_page(request):
 
     USDC_low_24h_API = cg.get_coins_markets(vs_currency='usd')
     USDC_low_24h = str(USDC_low_24h_API[4]['low_24h']) + ' $'
+
+
+
+    ADA_name_API = cg.get_coins_markets(vs_currency='usd')
+    ADA_name = ADA_name_API[5]['name']
+
+    ADA_symbol_API = cg.get_coins_markets(vs_currency='usd')
+    ADA_symbol = str(ADA_symbol_API[5]['symbol']).upper()
 
     ADA_current_price_API = cg.get_coins_markets(vs_currency='usd')
     ADA_current_price = str(ADA_current_price_API[5]['current_price']) + ' $'
@@ -112,43 +153,84 @@ def cryptoprojects_page(request):
 
 
 
+    SOL_name_API = cg.get_coins_markets(vs_currency='usd')
+    SOL_name = SOL_name_API[6]['name']
+
+    SOL_symbol_API = cg.get_coins_markets(vs_currency='usd')
+    SOL_symbol = str(SOL_symbol_API[6]['symbol']).upper()
+
+    SOL_current_price_API = cg.get_coins_markets(vs_currency='usd')
+    SOL_current_price = str(SOL_current_price_API[6]['current_price']) + ' $'
+
+    SOL_market_cap_API = cg.get_coins_markets(vs_currency='usd')
+    SOL_market_cap = str(SOL_market_cap_API[6]['market_cap']) + ' $'
+
+    SOL_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
+    SOL_price_change_percentage_24h = str(SOL_price_change_percentage_24h_API[6]['price_change_percentage_24h']) + ' %'
+
+    SOL_high_24h_API = cg.get_coins_markets(vs_currency='usd')
+    SOL_high_24h = str(SOL_high_24h_API[6]['high_24h']) + ' $'
+
+    SOL_low_24h_API = cg.get_coins_markets(vs_currency='usd')
+    SOL_low_24h = str(SOL_low_24h_API[6]['low_24h']) + ' $'
+
+
+
     return render(request, 'main/ftp.html', {
+        'BTC_name': BTC_name,
+        'BTC_symbol': BTC_symbol,
         'BTC_current_price': BTC_current_price,
         'BTC_market_cap': BTC_market_cap,
         'BTC_price_change_percentage_24h': BTC_price_change_percentage_24h,
         'BTC_high_24h': BTC_high_24h,
         'BTC_low_24h': BTC_low_24h,
 
+        'ETH_name': ETH_name,
+        'ETH_symbol': ETH_symbol,
         'ETH_current_price': ETH_current_price,
         'ETH_market_cap': ETH_market_cap,
         'ETH_price_change_percentage_24h': ETH_price_change_percentage_24h,
         'ETH_high_24h': ETH_high_24h,
         'ETH_low_24h': ETH_low_24h,
 
+        'USDT_name': USDT_name,
+        'USDT_symbol': USDT_symbol,
         'USDT_current_price': USDT_current_price,
         'USDT_market_cap': USDT_market_cap,
         'USDT_price_change_percentage_24h': USDT_price_change_percentage_24h,
         'USDT_high_24h': USDT_high_24h,
         'USDT_low_24h': USDT_low_24h,
 
+        'BNB_name': BNB_name,
+        'BNB_symbol': BNB_symbol,
         'BNB_current_price': BNB_current_price,
         'BNB_market_cap': BNB_market_cap,
         'BNB_price_change_percentage_24h': BNB_price_change_percentage_24h,
         'BNB_high_24h': BNB_high_24h,
         'BNB_low_24h': BNB_low_24h,
 
+        'USDC_name': USDC_name,
+        'USDC_symbol': USDC_symbol,
         'USDC_current_price': USDC_current_price,
         'USDC_market_cap': USDC_market_cap,
         'USDC_price_change_percentage_24h': USDC_price_change_percentage_24h,
         'USDC_high_24h': USDC_high_24h,
         'USDC_low_24h': USDC_low_24h,
 
+        'ADA_name': ADA_name,
+        'ADA_symbol': ADA_symbol,
         'ADA_current_price': ADA_current_price,
         'ADA_market_cap': ADA_market_cap,
         'ADA_price_change_percentage_24h': ADA_price_change_percentage_24h,
         'ADA_high_24h': ADA_high_24h,
         'ADA_low_24h': ADA_low_24h,
 
-
+        'SOL_name': SOL_name,
+        'SOL_symbol': SOL_symbol,
+        'SOL_current_price': SOL_current_price,
+        'SOL_market_cap': SOL_market_cap,
+        'SOL_price_change_percentage_24h': SOL_price_change_percentage_24h,
+        'SOL_high_24h': SOL_high_24h,
+        'SOL_low_24h': SOL_low_24h,
     })
 
