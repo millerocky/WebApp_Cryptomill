@@ -176,6 +176,75 @@ def cryptoprojects_page(request):
 
 
 
+    XRP_name_API = cg.get_coins_markets(vs_currency='usd')
+    XRP_name = XRP_name_API[7]['name']
+
+    XRP_symbol_API = cg.get_coins_markets(vs_currency='usd')
+    XRP_symbol = str(XRP_symbol_API[7]['symbol']).upper()
+
+    XRP_current_price_API = cg.get_coins_markets(vs_currency='usd')
+    XRP_current_price = str(XRP_current_price_API[7]['current_price']) + ' $'
+
+    XRP_market_cap_API = cg.get_coins_markets(vs_currency='usd')
+    XRP_market_cap = str(XRP_market_cap_API[7]['market_cap']) + ' $'
+
+    XRP_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
+    XRP_price_change_percentage_24h = str(XRP_price_change_percentage_24h_API[7]['price_change_percentage_24h']) + ' %'
+
+    XRP_high_24h_API = cg.get_coins_markets(vs_currency='usd')
+    XRP_high_24h = str(XRP_high_24h_API[7]['high_24h']) + ' $'
+
+    XRP_low_24h_API = cg.get_coins_markets(vs_currency='usd')
+    XRP_low_24h = str(XRP_low_24h_API[7]['low_24h']) + ' $'
+
+
+
+    LUNA_name_API = cg.get_coins_markets(vs_currency='usd')
+    LUNA_name = LUNA_name_API[8]['name']
+
+    LUNA_symbol_API = cg.get_coins_markets(vs_currency='usd')
+    LUNA_symbol = str(LUNA_symbol_API[8]['symbol']).upper()
+
+    LUNA_current_price_API = cg.get_coins_markets(vs_currency='usd')
+    LUNA_current_price = str(LUNA_current_price_API[8]['current_price']) + ' $'
+
+    LUNA_market_cap_API = cg.get_coins_markets(vs_currency='usd')
+    LUNA_market_cap = str(LUNA_market_cap_API[8]['market_cap']) + ' $'
+
+    LUNA_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
+    LUNA_price_change_percentage_24h = str(LUNA_price_change_percentage_24h_API[8]['price_change_percentage_24h']) + ' %'
+
+    LUNA_high_24h_API = cg.get_coins_markets(vs_currency='usd')
+    LUNA_high_24h = str(LUNA_high_24h_API[8]['high_24h']) + ' $'
+
+    LUNA_low_24h_API = cg.get_coins_markets(vs_currency='usd')
+    LUNA_low_24h = str(LUNA_low_24h_API[8]['low_24h']) + ' $'
+
+
+
+    DOT_name_API = cg.get_coins_markets(vs_currency='usd')
+    DOT_name = DOT_name_API[9]['name']
+
+    DOT_symbol_API = cg.get_coins_markets(vs_currency='usd')
+    DOT_symbol = str(DOT_symbol_API[9]['symbol']).upper()
+
+    DOT_current_price_API = cg.get_coins_markets(vs_currency='usd')
+    DOT_current_price = str(DOT_current_price_API[9]['current_price']) + ' $'
+
+    DOT_market_cap_API = cg.get_coins_markets(vs_currency='usd')
+    DOT_market_cap = str(DOT_market_cap_API[9]['market_cap']) + ' $'
+
+    DOT_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
+    DOT_price_change_percentage_24h = str(DOT_price_change_percentage_24h_API[9]['price_change_percentage_24h']) + ' %'
+
+    DOT_high_24h_API = cg.get_coins_markets(vs_currency='usd')
+    DOT_high_24h = str(DOT_high_24h_API[9]['high_24h']) + ' $'
+
+    DOT_low_24h_API = cg.get_coins_markets(vs_currency='usd')
+    DOT_low_24h = str(DOT_low_24h_API[9]['low_24h']) + ' $'
+
+
+
     return render(request, 'main/ftp.html', {
         'BTC_name': BTC_name,
         'BTC_symbol': BTC_symbol,
@@ -232,5 +301,29 @@ def cryptoprojects_page(request):
         'SOL_price_change_percentage_24h': SOL_price_change_percentage_24h,
         'SOL_high_24h': SOL_high_24h,
         'SOL_low_24h': SOL_low_24h,
+
+        'XRP_name': XRP_name,
+        'XRP_symbol': XRP_symbol,
+        'XRP_current_price': XRP_current_price,
+        'XRP_market_cap': XRP_market_cap,
+        'XRP_price_change_percentage_24h': XRP_price_change_percentage_24h,
+        'XRP_high_24h': XRP_high_24h,
+        'XRP_low_24h': XRP_low_24h,
+
+        'LUNA_name': LUNA_name,
+        'LUNA_symbol':LUNA_symbol,
+        'LUNA_current_price': LUNA_current_price,
+        'LUNA_market_cap': LUNA_market_cap,
+        'LUNA_price_change_percentage_24h': LUNA_price_change_percentage_24h,
+        'LUNA_high_24h': LUNA_high_24h,
+        'LUNA_low_24h': LUNA_low_24h,
+
+        'DOT_name': DOT_name,
+        'DOT_symbol': DOT_symbol,
+        'DOT_current_price': DOT_current_price,
+        'DOT_market_cap': DOT_market_cap,
+        'DOT_price_change_percentage_24h': DOT_price_change_percentage_24h,
+        'DOT_high_24h': DOT_high_24h,
+        'DOT_low_24h': DOT_low_24h,
     })
 
