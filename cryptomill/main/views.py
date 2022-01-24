@@ -245,7 +245,51 @@ def cryptoprojects_page(request):
 
 
 
-    return render(request, 'main/ftp.html', {
+    DOGE_name_API = cg.get_coins_markets(vs_currency='usd')
+    DOGE_name = DOGE_name_API[10]['name']
+
+    DOGE_symbol_API = cg.get_coins_markets(vs_currency='usd')
+    DOGE_symbol = str(DOGE_symbol_API[10]['symbol']).upper()
+
+    DOGE_current_price_API = cg.get_coins_markets(vs_currency='usd')
+    DOGE_current_price = str(DOGE_current_price_API[10]['current_price']) + ' $'
+
+    DOGE_market_cap_API = cg.get_coins_markets(vs_currency='usd')
+    DOGE_market_cap = str(DOGE_market_cap_API[10]['market_cap']) + ' $'
+
+    DOGE_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
+    DOGE_price_change_percentage_24h = str(DOGE_price_change_percentage_24h_API[10]['price_change_percentage_24h']) + ' %'
+
+    DOGE_high_24h_API = cg.get_coins_markets(vs_currency='usd')
+    DOGE_high_24h = str(DOGE_high_24h_API[10]['high_24h']) + ' $'
+
+    DOGE_low_24h_API = cg.get_coins_markets(vs_currency='usd')
+    DOGE_low_24h = str(DOGE_low_24h_API[10]['low_24h']) + ' $'
+
+
+
+    BUSD_name_API = cg.get_coins_markets(vs_currency='usd')
+    BUSD_name = BUSD_name_API[11]['name']
+
+    BUSD_symbol_API = cg.get_coins_markets(vs_currency='usd')
+    BUSD_symbol = str(BUSD_symbol_API[11]['symbol']).upper()
+
+    BUSD_current_price_API = cg.get_coins_markets(vs_currency='usd')
+    BUSD_current_price = str(BUSD_current_price_API[11]['current_price']) + ' $'
+
+    BUSD_market_cap_API = cg.get_coins_markets(vs_currency='usd')
+    BUSD_market_cap = str(BUSD_market_cap_API[11]['market_cap']) + ' $'
+
+    BUSD_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
+    BUSD_price_change_percentage_24h = str(BUSD_price_change_percentage_24h_API[11]['price_change_percentage_24h']) + ' %'
+
+    BUSD_high_24h_API = cg.get_coins_markets(vs_currency='usd')
+    BUSD_high_24h = str(BUSD_high_24h_API[11]['high_24h']) + ' $'
+
+    BUSD_low_24h_API = cg.get_coins_markets(vs_currency='usd')
+    BUSD_low_24h = str(BUSD_low_24h_API[11]['low_24h']) + ' $'
+
+    return render(request, 'main/cryptoprojects.html', {
         'BTC_name': BTC_name,
         'BTC_symbol': BTC_symbol,
         'BTC_current_price': BTC_current_price,
@@ -325,5 +369,21 @@ def cryptoprojects_page(request):
         'DOT_price_change_percentage_24h': DOT_price_change_percentage_24h,
         'DOT_high_24h': DOT_high_24h,
         'DOT_low_24h': DOT_low_24h,
+
+        'DOGE_name': DOGE_name,
+        'DOGE_symbol': DOGE_symbol,
+        'DOGE_current_price': DOGE_current_price,
+        'DOGE_market_cap': DOGE_market_cap,
+        'DOGE_price_change_percentage_24h': DOGE_price_change_percentage_24h,
+        'DOGE_high_24h': DOGE_high_24h,
+        'DOGE_low_24h': DOGE_low_24h,
+
+        'BUSD_name': BUSD_name,
+        'BUSD_symbol': BUSD_symbol,
+        'BUSD_current_price': BUSD_current_price,
+        'BUSD_market_cap': BUSD_market_cap,
+        'BUSD_price_change_percentage_24h': BUSD_price_change_percentage_24h,
+        'BUSD_high_24h': BUSD_high_24h,
+        'BUSD_low_24h': BUSD_low_24h,
     })
 
