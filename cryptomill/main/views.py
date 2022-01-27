@@ -11,379 +11,238 @@ def cryptoprojects_page(request):
     cg = CoinGeckoAPI()
 
     '''Getting all the data about cryptocurrencies from CoinGecko API'''
-    BTC_name_API = cg.get_coins_markets(vs_currency='usd')
-    BTC_name = BTC_name_API[0]['name']
-
-    BTC_symbol_API = cg.get_coins_markets(vs_currency='usd')
-    BTC_symbol= str(BTC_name_API[0]['symbol']).upper()
-
-    BTC_current_price_API = cg.get_coins_markets(vs_currency='usd')
-    BTC_current_price = str(BTC_current_price_API[0]['current_price']) + ' $'
-    # Final formatted BTC current price output
-    BTC_current_price = BTC_current_price[:2] + ',' + BTC_current_price[2:]
-
-    # Final formatted BTC market cap output
-    BTC_market_cap_API = cg.get_coins_markets(vs_currency='usd')
-    BTC_market_cap = str(BTC_market_cap_API[0]['market_cap']) + ' $'
-
-    BTC_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
-    BTC_price_change_percentage_24h = str(BTC_price_change_percentage_24h_API[0]['price_change_percentage_24h']) + ' %'
-
-    BTC_high_24h_API = cg.get_coins_markets(vs_currency='usd')
-    BTC_high_24h = str(BTC_high_24h_API[0]['high_24h']) + ' $'
-
-
-    BTC_low_24h_API = cg.get_coins_markets(vs_currency='usd')
-    BTC_low_24h = str(BTC_low_24h_API[0]['low_24h']) + ' $'
-
-
-
-    ETH_name_API = cg.get_coins_markets(vs_currency='usd')
-    ETH_name = ETH_name_API[1]['name']
-
-    ETH_symbol_API = cg.get_coins_markets(vs_currency='usd')
-    ETH_symbol = str(ETH_symbol_API[1]['symbol']).upper()
-
-    ETH_current_price_API = cg.get_coins_markets(vs_currency='usd')
-    ETH_current_price = str(ETH_current_price_API[1]['current_price']) + ' $'
-
-    ETH_market_cap_API = cg.get_coins_markets(vs_currency='usd')
-    ETH_market_cap = str(ETH_market_cap_API[1]['market_cap']) + ' $'
-
-    ETH_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
-    ETH_price_change_percentage_24h = str(ETH_price_change_percentage_24h_API[1]['price_change_percentage_24h']) + ' %'
-
-    ETH_high_24h_API = cg.get_coins_markets(vs_currency='usd')
-    ETH_high_24h = str(ETH_high_24h_API[1]['high_24h']) + ' $'
-
-    ETH_low_24h_API = cg.get_coins_markets(vs_currency='usd')
-    ETH_low_24h = str(ETH_low_24h_API[1]['low_24h']) + ' $'
-
-
-
-    USDT_name_API = cg.get_coins_markets(vs_currency='usd')
-    USDT_name = USDT_name_API[2]['name']
-
-    USDT_symbol_API = cg.get_coins_markets(vs_currency='usd')
-    USDT_symbol = str(USDT_symbol_API[2]['symbol']).upper()
-
-    USDT_current_price_API = cg.get_coins_markets(vs_currency='usd')
-    USDT_current_price = str(USDT_current_price_API[2]['current_price']) + ' $'
-
-    USDT_market_cap_API = cg.get_coins_markets(vs_currency='usd')
-    USDT_market_cap = str(USDT_market_cap_API[2]['market_cap']) + ' $'
-
-    USDT_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
-    USDT_price_change_percentage_24h = str(USDT_price_change_percentage_24h_API[2]['price_change_percentage_24h']) + ' %'
-
-    USDT_high_24h_API = cg.get_coins_markets(vs_currency='usd')
-    USDT_high_24h = str(USDT_high_24h_API[2]['high_24h']) + ' $'
-
-    USDT_low_24h_API = cg.get_coins_markets(vs_currency='usd')
-    USDT_low_24h = str(USDT_low_24h_API[2]['low_24h']) + ' $'
-
-
-
-    BNB_name_API = cg.get_coins_markets(vs_currency='usd')
-    BNB_name = BNB_name_API[3]['name']
-
-    BNB_symbol_API = cg.get_coins_markets(vs_currency='usd')
-    BNB_symbol = str(BNB_symbol_API[3]['symbol']).upper()
-
-    BNB_current_price_API = cg.get_coins_markets(vs_currency='usd')
-    BNB_current_price = str(BNB_current_price_API[3]['current_price']) + ' $'
-
-    BNB_market_cap_API = cg.get_coins_markets(vs_currency='usd')
-    BNB_market_cap = str(BNB_market_cap_API[3]['market_cap']) + ' $'
-
-    BNB_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
-    BNB_price_change_percentage_24h = str(BNB_price_change_percentage_24h_API[3]['price_change_percentage_24h']) + ' %'
-
-    BNB_high_24h_API = cg.get_coins_markets(vs_currency='usd')
-    BNB_high_24h = str(BNB_high_24h_API[3]['high_24h']) + ' $'
-
-    BNB_low_24h_API = cg.get_coins_markets(vs_currency='usd')
-    BNB_low_24h = str(BNB_low_24h_API[3]['low_24h']) + ' $'
-
-
-
-    USDC_name_API = cg.get_coins_markets(vs_currency='usd')
-    USDC_name = USDC_name_API[4]['name']
-
-    USDC_symbol_API = cg.get_coins_markets(vs_currency='usd')
-    USDC_symbol = str(USDC_symbol_API[4]['symbol']).upper()
-
-    USDC_current_price_API = cg.get_coins_markets(vs_currency='usd')
-    USDC_current_price = str(USDC_current_price_API[4]['current_price']) + ' $'
-
-    USDC_market_cap_API = cg.get_coins_markets(vs_currency='usd')
-    USDC_market_cap = str(USDC_market_cap_API[4]['market_cap']) + ' $'
-
-    USDC_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
-    USDC_price_change_percentage_24h = str(USDC_price_change_percentage_24h_API[4]['price_change_percentage_24h']) + ' %'
-
-    USDC_high_24h_API = cg.get_coins_markets(vs_currency='usd')
-    USDC_high_24h = str(USDC_high_24h_API[4]['high_24h']) + ' $'
-
-    USDC_low_24h_API = cg.get_coins_markets(vs_currency='usd')
-    USDC_low_24h = str(USDC_low_24h_API[4]['low_24h']) + ' $'
-
-
-
-    ADA_name_API = cg.get_coins_markets(vs_currency='usd')
-    ADA_name = ADA_name_API[5]['name']
-
-    ADA_symbol_API = cg.get_coins_markets(vs_currency='usd')
-    ADA_symbol = str(ADA_symbol_API[5]['symbol']).upper()
-
-    ADA_current_price_API = cg.get_coins_markets(vs_currency='usd')
-    ADA_current_price = str(ADA_current_price_API[5]['current_price']) + ' $'
-
-    ADA_market_cap_API = cg.get_coins_markets(vs_currency='usd')
-    ADA_market_cap = str(ADA_market_cap_API[5]['market_cap']) + ' $'
-
-    ADA_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
-    ADA_price_change_percentage_24h = str(ADA_price_change_percentage_24h_API[5]['price_change_percentage_24h']) + ' %'
-
-    ADA_high_24h_API = cg.get_coins_markets(vs_currency='usd')
-    ADA_high_24h = str(ADA_high_24h_API[5]['high_24h']) + ' $'
-
-    ADA_low_24h_API = cg.get_coins_markets(vs_currency='usd')
-    ADA_low_24h = str(ADA_low_24h_API[5]['low_24h']) + ' $'
-
-
-
-    SOL_name_API = cg.get_coins_markets(vs_currency='usd')
-    SOL_name = SOL_name_API[6]['name']
-
-    SOL_symbol_API = cg.get_coins_markets(vs_currency='usd')
-    SOL_symbol = str(SOL_symbol_API[6]['symbol']).upper()
-
-    SOL_current_price_API = cg.get_coins_markets(vs_currency='usd')
-    SOL_current_price = str(SOL_current_price_API[6]['current_price']) + ' $'
-
-    SOL_market_cap_API = cg.get_coins_markets(vs_currency='usd')
-    SOL_market_cap = str(SOL_market_cap_API[6]['market_cap']) + ' $'
-
-    SOL_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
-    SOL_price_change_percentage_24h = str(SOL_price_change_percentage_24h_API[6]['price_change_percentage_24h']) + ' %'
-
-    SOL_high_24h_API = cg.get_coins_markets(vs_currency='usd')
-    SOL_high_24h = str(SOL_high_24h_API[6]['high_24h']) + ' $'
-
-    SOL_low_24h_API = cg.get_coins_markets(vs_currency='usd')
-    SOL_low_24h = str(SOL_low_24h_API[6]['low_24h']) + ' $'
-
-
-
-    XRP_name_API = cg.get_coins_markets(vs_currency='usd')
-    XRP_name = XRP_name_API[7]['name']
-
-    XRP_symbol_API = cg.get_coins_markets(vs_currency='usd')
-    XRP_symbol = str(XRP_symbol_API[7]['symbol']).upper()
-
-    XRP_current_price_API = cg.get_coins_markets(vs_currency='usd')
-    XRP_current_price = str(XRP_current_price_API[7]['current_price']) + ' $'
-
-    XRP_market_cap_API = cg.get_coins_markets(vs_currency='usd')
-    XRP_market_cap = str(XRP_market_cap_API[7]['market_cap']) + ' $'
-
-    XRP_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
-    XRP_price_change_percentage_24h = str(XRP_price_change_percentage_24h_API[7]['price_change_percentage_24h']) + ' %'
-
-    XRP_high_24h_API = cg.get_coins_markets(vs_currency='usd')
-    XRP_high_24h = str(XRP_high_24h_API[7]['high_24h']) + ' $'
-
-    XRP_low_24h_API = cg.get_coins_markets(vs_currency='usd')
-    XRP_low_24h = str(XRP_low_24h_API[7]['low_24h']) + ' $'
-
-
-
-    LUNA_name_API = cg.get_coins_markets(vs_currency='usd')
-    LUNA_name = LUNA_name_API[8]['name']
-
-    LUNA_symbol_API = cg.get_coins_markets(vs_currency='usd')
-    LUNA_symbol = str(LUNA_symbol_API[8]['symbol']).upper()
-
-    LUNA_current_price_API = cg.get_coins_markets(vs_currency='usd')
-    LUNA_current_price = str(LUNA_current_price_API[8]['current_price']) + ' $'
-
-    LUNA_market_cap_API = cg.get_coins_markets(vs_currency='usd')
-    LUNA_market_cap = str(LUNA_market_cap_API[8]['market_cap']) + ' $'
-
-    LUNA_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
-    LUNA_price_change_percentage_24h = str(LUNA_price_change_percentage_24h_API[8]['price_change_percentage_24h']) + ' %'
-
-    LUNA_high_24h_API = cg.get_coins_markets(vs_currency='usd')
-    LUNA_high_24h = str(LUNA_high_24h_API[8]['high_24h']) + ' $'
-
-    LUNA_low_24h_API = cg.get_coins_markets(vs_currency='usd')
-    LUNA_low_24h = str(LUNA_low_24h_API[8]['low_24h']) + ' $'
-
-
-
-    DOT_name_API = cg.get_coins_markets(vs_currency='usd')
-    DOT_name = DOT_name_API[9]['name']
-
-    DOT_symbol_API = cg.get_coins_markets(vs_currency='usd')
-    DOT_symbol = str(DOT_symbol_API[9]['symbol']).upper()
-
-    DOT_current_price_API = cg.get_coins_markets(vs_currency='usd')
-    DOT_current_price = str(DOT_current_price_API[9]['current_price']) + ' $'
-
-    DOT_market_cap_API = cg.get_coins_markets(vs_currency='usd')
-    DOT_market_cap = str(DOT_market_cap_API[9]['market_cap']) + ' $'
-
-    DOT_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
-    DOT_price_change_percentage_24h = str(DOT_price_change_percentage_24h_API[9]['price_change_percentage_24h']) + ' %'
-
-    DOT_high_24h_API = cg.get_coins_markets(vs_currency='usd')
-    DOT_high_24h = str(DOT_high_24h_API[9]['high_24h']) + ' $'
-
-    DOT_low_24h_API = cg.get_coins_markets(vs_currency='usd')
-    DOT_low_24h = str(DOT_low_24h_API[9]['low_24h']) + ' $'
-
-
-
-    DOGE_name_API = cg.get_coins_markets(vs_currency='usd')
-    DOGE_name = DOGE_name_API[10]['name']
-
-    DOGE_symbol_API = cg.get_coins_markets(vs_currency='usd')
-    DOGE_symbol = str(DOGE_symbol_API[10]['symbol']).upper()
-
-    DOGE_current_price_API = cg.get_coins_markets(vs_currency='usd')
-    DOGE_current_price = str(DOGE_current_price_API[10]['current_price']) + ' $'
-
-    DOGE_market_cap_API = cg.get_coins_markets(vs_currency='usd')
-    DOGE_market_cap = str(DOGE_market_cap_API[10]['market_cap']) + ' $'
-
-    DOGE_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
-    DOGE_price_change_percentage_24h = str(DOGE_price_change_percentage_24h_API[10]['price_change_percentage_24h']) + ' %'
-
-    DOGE_high_24h_API = cg.get_coins_markets(vs_currency='usd')
-    DOGE_high_24h = str(DOGE_high_24h_API[10]['high_24h']) + ' $'
-
-    DOGE_low_24h_API = cg.get_coins_markets(vs_currency='usd')
-    DOGE_low_24h = str(DOGE_low_24h_API[10]['low_24h']) + ' $'
-
-
-
-    BUSD_name_API = cg.get_coins_markets(vs_currency='usd')
-    BUSD_name = BUSD_name_API[11]['name']
-
-    BUSD_symbol_API = cg.get_coins_markets(vs_currency='usd')
-    BUSD_symbol = str(BUSD_symbol_API[11]['symbol']).upper()
-
-    BUSD_current_price_API = cg.get_coins_markets(vs_currency='usd')
-    BUSD_current_price = str(BUSD_current_price_API[11]['current_price']) + ' $'
-
-    BUSD_market_cap_API = cg.get_coins_markets(vs_currency='usd')
-    BUSD_market_cap = str(BUSD_market_cap_API[11]['market_cap']) + ' $'
-
-    BUSD_price_change_percentage_24h_API = cg.get_coins_markets(vs_currency='usd')
-    BUSD_price_change_percentage_24h = str(BUSD_price_change_percentage_24h_API[11]['price_change_percentage_24h']) + ' %'
-
-    BUSD_high_24h_API = cg.get_coins_markets(vs_currency='usd')
-    BUSD_high_24h = str(BUSD_high_24h_API[11]['high_24h']) + ' $'
-
-    BUSD_low_24h_API = cg.get_coins_markets(vs_currency='usd')
-    BUSD_low_24h = str(BUSD_low_24h_API[11]['low_24h']) + ' $'
+    coin_name_rank_1 = cg.get_coins_markets(vs_currency='usd')[0]['name']
+    coin_symbol_rank_1 = str(cg.get_coins_markets(vs_currency='usd')[0]['symbol']).upper()
+    coin_current_price_rank_1 = str(cg.get_coins_markets(vs_currency='usd')[0]['current_price']) + ' $'
+    coin_current_price_rank_1 = coin_current_price_rank_1[:2] + ',' + coin_current_price_rank_1[2:]
+    coin_market_cap_rank_1 = str(cg.get_coins_markets(vs_currency='usd')[0]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_1 = str(cg.get_coins_markets(vs_currency='usd')[0]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_1 = str(cg.get_coins_markets(vs_currency='usd')[0]['high_24h']) + ' $'
+    coin_low_24h_rank_1 = str(cg.get_coins_markets(vs_currency='usd')[0]['low_24h']) + ' $'
+
+    coin_name_rank_2 = cg.get_coins_markets(vs_currency='usd')[1]['name']
+    coin_symbol_rank_2 = str(cg.get_coins_markets(vs_currency='usd')[1]['symbol']).upper()
+    coin_current_price_rank_2 = str(cg.get_coins_markets(vs_currency='usd')[1]['current_price']) + ' $'
+    coin_market_cap_rank_2 = str(cg.get_coins_markets(vs_currency='usd')[1]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_2 = str(cg.get_coins_markets(vs_currency='usd')[1]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_2 = str(cg.get_coins_markets(vs_currency='usd')[1]['high_24h']) + ' $'
+    coin_low_24h_rank_2 = str(cg.get_coins_markets(vs_currency='usd')[1]['low_24h']) + ' $'
+
+    coin_name_rank_3 = cg.get_coins_markets(vs_currency='usd')[2]['name']
+    coin_symbol_rank_3 = str(cg.get_coins_markets(vs_currency='usd')[2]['symbol']).upper()
+    coin_current_price_rank_3 = str(cg.get_coins_markets(vs_currency='usd')[2]['current_price']) + ' $'
+    coin_market_cap_rank_3 = str(cg.get_coins_markets(vs_currency='usd')[2]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_3 = str(cg.get_coins_markets(vs_currency='usd')[2]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_3 = str(cg.get_coins_markets(vs_currency='usd')[2]['high_24h']) + ' $'
+    coin_low_24h_rank_3 = str(cg.get_coins_markets(vs_currency='usd')[2]['low_24h']) + ' $'
+
+    coin_name_rank_4 = cg.get_coins_markets(vs_currency='usd')[3]['name']
+    coin_symbol_rank_4 = str(cg.get_coins_markets(vs_currency='usd')[3]['symbol']).upper()
+    coin_current_price_rank_4 = str(cg.get_coins_markets(vs_currency='usd')[3]['current_price']) + ' $'
+    coin_market_cap_rank_4 = str(cg.get_coins_markets(vs_currency='usd')[3]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_4 = str(cg.get_coins_markets(vs_currency='usd')[3]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_4 = str(cg.get_coins_markets(vs_currency='usd')[3]['high_24h']) + ' $'
+    coin_low_24h_rank_4 = str(cg.get_coins_markets(vs_currency='usd')[3]['low_24h']) + ' $'
+
+    coin_name_rank_5 = cg.get_coins_markets(vs_currency='usd')[4]['name']
+    coin_symbol_rank_5 = str(cg.get_coins_markets(vs_currency='usd')[4]['symbol']).upper()
+    coin_current_price_rank_5 = str(cg.get_coins_markets(vs_currency='usd')[4]['current_price']) + ' $'
+    coin_market_cap_rank_5 = str(cg.get_coins_markets(vs_currency='usd')[4]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_5 = str(cg.get_coins_markets(vs_currency='usd')[4]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_5 = str(cg.get_coins_markets(vs_currency='usd')[4]['high_24h']) + ' $'
+    coin_low_24h_rank_5 = str(cg.get_coins_markets(vs_currency='usd')[4]['low_24h']) + ' $'
+
+    coin_name_rank_6 = cg.get_coins_markets(vs_currency='usd')[5]['name']
+    coin_symbol_rank_6 = str(cg.get_coins_markets(vs_currency='usd')[5]['symbol']).upper()
+    coin_current_price_rank_6 = str(cg.get_coins_markets(vs_currency='usd')[5]['current_price']) + ' $'
+    coin_market_cap_rank_6 = str(cg.get_coins_markets(vs_currency='usd')[5]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_6 = str(cg.get_coins_markets(vs_currency='usd')[5]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_6 = str(cg.get_coins_markets(vs_currency='usd')[5]['high_24h']) + ' $'
+    coin_low_24h_rank_6 = str(cg.get_coins_markets(vs_currency='usd')[5]['low_24h']) + ' $'
+
+    coin_name_rank_7 = cg.get_coins_markets(vs_currency='usd')[6]['name']
+    coin_symbol_rank_7 = str(cg.get_coins_markets(vs_currency='usd')[6]['symbol']).upper()
+    coin_current_price_rank_7 = str(cg.get_coins_markets(vs_currency='usd')[6]['current_price']) + ' $'
+    coin_market_cap_rank_7 = str(cg.get_coins_markets(vs_currency='usd')[6]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_7 = str(cg.get_coins_markets(vs_currency='usd')[6]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_7 = str(cg.get_coins_markets(vs_currency='usd')[6]['high_24h']) + ' $'
+    coin_low_24h_rank_7 = str(cg.get_coins_markets(vs_currency='usd')[6]['low_24h']) + ' $'
+
+    coin_name_rank_8 = cg.get_coins_markets(vs_currency='usd')[7]['name']
+    coin_symbol_rank_8 = str(cg.get_coins_markets(vs_currency='usd')[7]['symbol']).upper()
+    coin_current_price_rank_8 = str(cg.get_coins_markets(vs_currency='usd')[7]['current_price']) + ' $'
+    coin_market_cap_rank_8 = str(cg.get_coins_markets(vs_currency='usd')[7]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_8 = str(cg.get_coins_markets(vs_currency='usd')[7]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_8 = str(cg.get_coins_markets(vs_currency='usd')[7]['high_24h']) + ' $'
+    coin_low_24h_rank_8 = str(cg.get_coins_markets(vs_currency='usd')[7]['low_24h']) + ' $'
+
+    coin_name_rank_9 = cg.get_coins_markets(vs_currency='usd')[8]['name']
+    coin_symbol_rank_9 = str(cg.get_coins_markets(vs_currency='usd')[8]['symbol']).upper()
+    coin_current_price_rank_9 = str(cg.get_coins_markets(vs_currency='usd')[8]['current_price']) + ' $'
+    coin_market_cap_rank_9 = str(cg.get_coins_markets(vs_currency='usd')[8]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_9 = str(cg.get_coins_markets(vs_currency='usd')[8]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_9 = str(cg.get_coins_markets(vs_currency='usd')[8]['high_24h']) + ' $'
+    coin_low_24h_rank_9 = str(cg.get_coins_markets(vs_currency='usd')[8]['low_24h']) + ' $'
+
+    coin_name_rank_10 = cg.get_coins_markets(vs_currency='usd')[9]['name']
+    coin_symbol_rank_10 = str(cg.get_coins_markets(vs_currency='usd')[9]['symbol']).upper()
+    coin_current_price_rank_10 = str(cg.get_coins_markets(vs_currency='usd')[9]['current_price']) + ' $'
+    coin_market_cap_rank_10 = str(cg.get_coins_markets(vs_currency='usd')[9]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_10 = str(cg.get_coins_markets(vs_currency='usd')[9]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_10 = str(cg.get_coins_markets(vs_currency='usd')[9]['high_24h']) + ' $'
+    coin_low_24h_rank_10 = str(cg.get_coins_markets(vs_currency='usd')[9]['low_24h']) + ' $'
+
+    coin_name_rank_11 = cg.get_coins_markets(vs_currency='usd')[10]['name']
+    coin_symbol_rank_11 = str(cg.get_coins_markets(vs_currency='usd')[10]['symbol']).upper()
+    coin_current_price_rank_11 = str(cg.get_coins_markets(vs_currency='usd')[10]['current_price']) + ' $'
+    coin_market_cap_rank_11 = str(cg.get_coins_markets(vs_currency='usd')[10]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_11 = str(cg.get_coins_markets(vs_currency='usd')[10]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_11 = str(cg.get_coins_markets(vs_currency='usd')[10]['high_24h']) + ' $'
+    coin_low_24h_rank_11 = str(cg.get_coins_markets(vs_currency='usd')[10]['low_24h']) + ' $'
+
+    coin_name_rank_12 = cg.get_coins_markets(vs_currency='usd')[11]['name']
+    coin_symbol_rank_12 = str(cg.get_coins_markets(vs_currency='usd')[11]['symbol']).upper()
+    coin_current_price_rank_12 = str(cg.get_coins_markets(vs_currency='usd')[11]['current_price']) + ' $'
+    coin_market_cap_rank_12 = str(cg.get_coins_markets(vs_currency='usd')[11]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_12 = str(cg.get_coins_markets(vs_currency='usd')[11]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_12 = str(cg.get_coins_markets(vs_currency='usd')[11]['high_24h']) + ' $'
+    coin_low_24h_rank_12 = str(cg.get_coins_markets(vs_currency='usd')[11]['low_24h']) + ' $'
+
+    coin_name_rank_13 = cg.get_coins_markets(vs_currency='usd')[12]['name']
+    coin_symbol_rank_13 = str(cg.get_coins_markets(vs_currency='usd')[12]['symbol']).upper()
+    coin_current_price_rank_13 = str(cg.get_coins_markets(vs_currency='usd')[12]['current_price']) + ' $'
+    coin_market_cap_rank_13 = str(cg.get_coins_markets(vs_currency='usd')[12]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_13 = str(cg.get_coins_markets(vs_currency='usd')[12]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_13 = str(cg.get_coins_markets(vs_currency='usd')[12]['high_24h']) + ' $'
+    coin_low_24h_rank_13 = str(cg.get_coins_markets(vs_currency='usd')[12]['low_24h']) + ' $'
+
+    coin_name_rank_14 = cg.get_coins_markets(vs_currency='usd')[13]['name']
+    coin_symbol_rank_14 = str(cg.get_coins_markets(vs_currency='usd')[13]['symbol']).upper()
+    coin_current_price_rank_14 = str(cg.get_coins_markets(vs_currency='usd')[13]['current_price']) + ' $'
+    coin_market_cap_rank_14 = str(cg.get_coins_markets(vs_currency='usd')[13]['market_cap']) + ' $'
+    coin_price_change_percentage_24h_rank_14 = str(cg.get_coins_markets(vs_currency='usd')[13]['price_change_percentage_24h']) + ' %'
+    coin_high_24h_rank_14 = str(cg.get_coins_markets(vs_currency='usd')[13]['high_24h']) + ' $'
+    coin_low_24h_rank_14 = str(cg.get_coins_markets(vs_currency='usd')[13]['low_24h']) + ' $'
 
     return render(request, 'main/cryptoprojects.html', {
-        'BTC_name': BTC_name,
-        'BTC_symbol': BTC_symbol,
-        'BTC_current_price': BTC_current_price,
-        'BTC_market_cap': BTC_market_cap,
-        'BTC_price_change_percentage_24h': BTC_price_change_percentage_24h,
-        'BTC_high_24h': BTC_high_24h,
-        'BTC_low_24h': BTC_low_24h,
+        'coin_name_rank_1': coin_name_rank_1,
+        'coin_symbol_rank_1': coin_symbol_rank_1,
+        'coin_current_price_rank_1': coin_current_price_rank_1,
+        'coin_price_change_percentage_24h_rank_1': coin_price_change_percentage_24h_rank_1,
+        'coin_high_24h_rank_1': coin_high_24h_rank_1,
+        'coin_low_24h_rank_1': coin_low_24h_rank_1,
+        'coin_market_cap_rank_1': coin_market_cap_rank_1,
+        
+        'coin_name_rank_2': coin_name_rank_2,
+        'coin_symbol_rank_2': coin_symbol_rank_2,
+        'coin_current_price_rank_2': coin_current_price_rank_2,
+        'coin_price_change_percentage_24h_rank_2': coin_price_change_percentage_24h_rank_2,
+        'coin_high_24h_rank_2': coin_high_24h_rank_2,
+        'coin_low_24h_rank_2': coin_low_24h_rank_2,
+        'coin_market_cap_rank_2': coin_market_cap_rank_2,
 
-        'ETH_name': ETH_name,
-        'ETH_symbol': ETH_symbol,
-        'ETH_current_price': ETH_current_price,
-        'ETH_market_cap': ETH_market_cap,
-        'ETH_price_change_percentage_24h': ETH_price_change_percentage_24h,
-        'ETH_high_24h': ETH_high_24h,
-        'ETH_low_24h': ETH_low_24h,
+        'coin_name_rank_3': coin_name_rank_3,
+        'coin_symbol_rank_3': coin_symbol_rank_3,
+        'coin_current_price_rank_3': coin_current_price_rank_3,
+        'coin_price_change_percentage_24h_rank_3': coin_price_change_percentage_24h_rank_3,
+        'coin_high_24h_rank_3': coin_high_24h_rank_3,
+        'coin_low_24h_rank_3': coin_low_24h_rank_3,
+        'coin_market_cap_rank_3': coin_market_cap_rank_3,
 
-        'USDT_name': USDT_name,
-        'USDT_symbol': USDT_symbol,
-        'USDT_current_price': USDT_current_price,
-        'USDT_market_cap': USDT_market_cap,
-        'USDT_price_change_percentage_24h': USDT_price_change_percentage_24h,
-        'USDT_high_24h': USDT_high_24h,
-        'USDT_low_24h': USDT_low_24h,
+        'coin_name_rank_4': coin_name_rank_4,
+        'coin_symbol_rank_4': coin_symbol_rank_4,
+        'coin_current_price_rank_4': coin_current_price_rank_4,
+        'coin_price_change_percentage_24h_rank_4': coin_price_change_percentage_24h_rank_4,
+        'coin_high_24h_rank_4': coin_high_24h_rank_4,
+        'coin_low_24h_rank_4': coin_low_24h_rank_4,
+        'coin_market_cap_rank_4': coin_market_cap_rank_4,
 
-        'BNB_name': BNB_name,
-        'BNB_symbol': BNB_symbol,
-        'BNB_current_price': BNB_current_price,
-        'BNB_market_cap': BNB_market_cap,
-        'BNB_price_change_percentage_24h': BNB_price_change_percentage_24h,
-        'BNB_high_24h': BNB_high_24h,
-        'BNB_low_24h': BNB_low_24h,
+        'coin_name_rank_5': coin_name_rank_5,
+        'coin_symbol_rank_5': coin_symbol_rank_5,
+        'coin_current_price_rank_5': coin_current_price_rank_5,
+        'coin_price_change_percentage_24h_rank_5': coin_price_change_percentage_24h_rank_5,
+        'coin_high_24h_rank_5': coin_high_24h_rank_5,
+        'coin_low_24h_rank_5': coin_low_24h_rank_5,
+        'coin_market_cap_rank_5': coin_market_cap_rank_5,
 
-        'USDC_name': USDC_name,
-        'USDC_symbol': USDC_symbol,
-        'USDC_current_price': USDC_current_price,
-        'USDC_market_cap': USDC_market_cap,
-        'USDC_price_change_percentage_24h': USDC_price_change_percentage_24h,
-        'USDC_high_24h': USDC_high_24h,
-        'USDC_low_24h': USDC_low_24h,
+        'coin_name_rank_6': coin_name_rank_6,
+        'coin_symbol_rank_6': coin_symbol_rank_6,
+        'coin_current_price_rank_6': coin_current_price_rank_6,
+        'coin_price_change_percentage_24h_rank_6': coin_price_change_percentage_24h_rank_6,
+        'coin_high_24h_rank_6': coin_high_24h_rank_6,
+        'coin_low_24h_rank_6': coin_low_24h_rank_6,
+        'coin_market_cap_rank_6': coin_market_cap_rank_6,
 
-        'ADA_name': ADA_name,
-        'ADA_symbol': ADA_symbol,
-        'ADA_current_price': ADA_current_price,
-        'ADA_market_cap': ADA_market_cap,
-        'ADA_price_change_percentage_24h': ADA_price_change_percentage_24h,
-        'ADA_high_24h': ADA_high_24h,
-        'ADA_low_24h': ADA_low_24h,
+        'coin_name_rank_7': coin_name_rank_7,
+        'coin_symbol_rank_7': coin_symbol_rank_7,
+        'coin_current_price_rank_7': coin_current_price_rank_7,
+        'coin_price_change_percentage_24h_rank_7': coin_price_change_percentage_24h_rank_7,
+        'coin_high_24h_rank_7': coin_high_24h_rank_7,
+        'coin_low_24h_rank_7': coin_low_24h_rank_7,
+        'coin_market_cap_rank_7': coin_market_cap_rank_7,
 
-        'SOL_name': SOL_name,
-        'SOL_symbol': SOL_symbol,
-        'SOL_current_price': SOL_current_price,
-        'SOL_market_cap': SOL_market_cap,
-        'SOL_price_change_percentage_24h': SOL_price_change_percentage_24h,
-        'SOL_high_24h': SOL_high_24h,
-        'SOL_low_24h': SOL_low_24h,
+        'coin_name_rank_8': coin_name_rank_8,
+        'coin_symbol_rank_8': coin_symbol_rank_8,
+        'coin_current_price_rank_8': coin_current_price_rank_8,
+        'coin_price_change_percentage_24h_rank_8': coin_price_change_percentage_24h_rank_8,
+        'coin_high_24h_rank_8': coin_high_24h_rank_8,
+        'coin_low_24h_rank_8': coin_low_24h_rank_8,
+        'coin_market_cap_rank_8': coin_market_cap_rank_8,
 
-        'XRP_name': XRP_name,
-        'XRP_symbol': XRP_symbol,
-        'XRP_current_price': XRP_current_price,
-        'XRP_market_cap': XRP_market_cap,
-        'XRP_price_change_percentage_24h': XRP_price_change_percentage_24h,
-        'XRP_high_24h': XRP_high_24h,
-        'XRP_low_24h': XRP_low_24h,
+        'coin_name_rank_9': coin_name_rank_9,
+        'coin_symbol_rank_9': coin_symbol_rank_9,
+        'coin_current_price_rank_9': coin_current_price_rank_9,
+        'coin_price_change_percentage_24h_rank_9': coin_price_change_percentage_24h_rank_9,
+        'coin_high_24h_rank_9': coin_high_24h_rank_9,
+        'coin_low_24h_rank_9': coin_low_24h_rank_9,
+        'coin_market_cap_rank_9': coin_market_cap_rank_9,
 
-        'LUNA_name': LUNA_name,
-        'LUNA_symbol':LUNA_symbol,
-        'LUNA_current_price': LUNA_current_price,
-        'LUNA_market_cap': LUNA_market_cap,
-        'LUNA_price_change_percentage_24h': LUNA_price_change_percentage_24h,
-        'LUNA_high_24h': LUNA_high_24h,
-        'LUNA_low_24h': LUNA_low_24h,
+        'coin_name_rank_10': coin_name_rank_10,
+        'coin_symbol_rank_10': coin_symbol_rank_10,
+        'coin_current_price_rank_10': coin_current_price_rank_10,
+        'coin_price_change_percentage_24h_rank_10': coin_price_change_percentage_24h_rank_10,
+        'coin_high_24h_rank_10': coin_high_24h_rank_10,
+        'coin_low_24h_rank_10': coin_low_24h_rank_10,
+        'coin_market_cap_rank_10': coin_market_cap_rank_10,
 
-        'DOT_name': DOT_name,
-        'DOT_symbol': DOT_symbol,
-        'DOT_current_price': DOT_current_price,
-        'DOT_market_cap': DOT_market_cap,
-        'DOT_price_change_percentage_24h': DOT_price_change_percentage_24h,
-        'DOT_high_24h': DOT_high_24h,
-        'DOT_low_24h': DOT_low_24h,
+        'coin_name_rank_11': coin_name_rank_11,
+        'coin_symbol_rank_11': coin_symbol_rank_11,
+        'coin_current_price_rank_11': coin_current_price_rank_11,
+        'coin_price_change_percentage_24h_rank_11': coin_price_change_percentage_24h_rank_11,
+        'coin_high_24h_rank_11': coin_high_24h_rank_11,
+        'coin_low_24h_rank_11': coin_low_24h_rank_11,
+        'coin_market_cap_rank_11': coin_market_cap_rank_11,
 
-        'DOGE_name': DOGE_name,
-        'DOGE_symbol': DOGE_symbol,
-        'DOGE_current_price': DOGE_current_price,
-        'DOGE_market_cap': DOGE_market_cap,
-        'DOGE_price_change_percentage_24h': DOGE_price_change_percentage_24h,
-        'DOGE_high_24h': DOGE_high_24h,
-        'DOGE_low_24h': DOGE_low_24h,
+        'coin_name_rank_12': coin_name_rank_12,
+        'coin_symbol_rank_12': coin_symbol_rank_12,
+        'coin_current_price_rank_12': coin_current_price_rank_12,
+        'coin_price_change_percentage_24h_rank_12': coin_price_change_percentage_24h_rank_12,
+        'coin_high_24h_rank_12': coin_high_24h_rank_12,
+        'coin_low_24h_rank_12': coin_low_24h_rank_12,
+        'coin_market_cap_rank_12': coin_market_cap_rank_12,
 
-        'BUSD_name': BUSD_name,
-        'BUSD_symbol': BUSD_symbol,
-        'BUSD_current_price': BUSD_current_price,
-        'BUSD_market_cap': BUSD_market_cap,
-        'BUSD_price_change_percentage_24h': BUSD_price_change_percentage_24h,
-        'BUSD_high_24h': BUSD_high_24h,
-        'BUSD_low_24h': BUSD_low_24h,
+        'coin_name_rank_13': coin_name_rank_13,
+        'coin_symbol_rank_13': coin_symbol_rank_13,
+        'coin_current_price_rank_13': coin_current_price_rank_13,
+        'coin_price_change_percentage_24h_rank_13': coin_price_change_percentage_24h_rank_13,
+        'coin_high_24h_rank_13': coin_high_24h_rank_13,
+        'coin_low_24h_rank_13': coin_low_24h_rank_13,
+        'coin_market_cap_rank_13': coin_market_cap_rank_13,
+
+        'coin_name_rank_14': coin_name_rank_14,
+        'coin_symbol_rank_14': coin_symbol_rank_14,
+        'coin_current_price_rank_14': coin_current_price_rank_14,
+        'coin_price_change_percentage_24h_rank_14': coin_price_change_percentage_24h_rank_14,
+        'coin_high_24h_rank_14': coin_high_24h_rank_14,
+        'coin_low_24h_rank_14': coin_low_24h_rank_14,
+        'coin_market_cap_rank_14': coin_market_cap_rank_14,
+
+        'coin_name_rank_15': coin_name_rank_15,
+        'coin_symbol_rank_15': coin_symbol_rank_15,
+        'coin_current_price_rank_15': coin_current_price_rank_15,
+        'coin_price_change_percentage_24h_rank_15': coin_price_change_percentage_24h_rank_15,
+        'coin_high_24h_rank_15': coin_high_24h_rank_15,
+        'coin_low_24h_rank_15': coin_low_24h_rank_15,
+        'coin_market_cap_rank_15': coin_market_cap_rank_15,
     })
 
